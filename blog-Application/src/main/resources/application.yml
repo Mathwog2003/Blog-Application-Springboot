@@ -1,0 +1,15 @@
+server:
+  port: 8282
+
+spring:
+    datasource:
+      url: jdbc:h2:file:./blogapp # JDBC URL for H2 in-memory database
+      driver-Class-Name: org.h2.Driver
+      username: sa  # Default H2 username
+      password:   # Default H2 password
+    jpa:
+     hibernate:
+       ddl-auto: create  # Automatically update the schema (you can change this as needed)
+#  datasource:
+#    initialization-mode: always  # Initialize the database on startup
+
