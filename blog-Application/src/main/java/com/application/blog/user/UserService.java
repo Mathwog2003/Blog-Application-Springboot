@@ -1,5 +1,6 @@
 package com.application.blog.user;
 
+import com.application.blog.user.dtos.CreateUserRequest;
 import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,12 +15,12 @@ public class UserService {
     @Autowired
     private UserRepositary userRepositary;
 
-    public UserEntity createUser(String username, String password, String email)
+    public UserEntity createUser(CreateUserRequest createUserRequest)
     {
         var newUser = UserEntity.builder()
-                .username(username)
+                .username(createUserRequest.getName())
 //                .password(password)
-                .email(email)
+                .email(createUserRequest.getEmail())
                 .build();
         return userRepositary.save(newUser);
 
