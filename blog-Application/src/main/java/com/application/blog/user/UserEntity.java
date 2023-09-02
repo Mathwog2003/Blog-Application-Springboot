@@ -9,6 +9,7 @@ import lombok.*;
 @Setter
 @ToString
 @RequiredArgsConstructor
+@Builder
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
